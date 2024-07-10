@@ -20,7 +20,6 @@ const IGNORED_TASK_DEFINITION_ATTRIBUTES = [
   'status'
 ];
 
-// const WAIT_DEFAULT_DELAY_SEC = 5;
 const MAX_WAIT_MINUTES = 360;
 
 function isEmptyValue(value) {
@@ -178,8 +177,6 @@ async function waitForTasksStopped(ecs, clusterName, taskArns, waitForMinutes) {
   if (waitForMinutes > MAX_WAIT_MINUTES) {
     waitForMinutes = MAX_WAIT_MINUTES;
   }
-
-  // const maxAttempts = (waitForMinutes * 60) / WAIT_DEFAULT_DELAY_SEC;
 
   core.debug('Waiting for tasks to stop');
   
